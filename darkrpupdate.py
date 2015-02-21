@@ -16,12 +16,13 @@ def upload(site, path):
         for name in files:
             f = os.path.join(root, name)
             pagename, _ = os.path.splitext(os.path.relpath(f, path))
+            pagename = pagename.replace('\\', '/')
             print(pagename)
             page = pywikibot.Page(site, pagename)
 
             # Uncomment this code to enable page deletion
-            #if page.exists():
-            #    page.delete("This page was deleted because the pagename is all lowercase. Please go to the page that has the proper casing.", False)
+            # if page.exists():
+            #    page.delete("Backwards slash error", False)
 
             with open(f, 'r') as file:
                 page.text = file.read()
