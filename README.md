@@ -15,25 +15,25 @@ git clone --recursive https://gerrit.wikimedia.org/r/pywikibot/core.git
 # Usage
 > Python 2.7 is recommended because of [this](https://phabricator.wikimedia.org/T90338#1056444)
 
-- When on Linux, you must run the following commands in the `garrysmod/data` folder because all folders created by gmod are lowercase.
+- You must run the following commands in the `garrysmod/data` folder because all folders created by gmod are lowercase.
 ```bash
-mkdir darkrpwiki
-mkdir darkrpwiki/Functions
-mkdir darkrpwiki/Functions/Darkrp/Server
-mkdir darkrpwiki/Functions/Darkrp/Client
-mkdir darkrpwiki/Functions/Darkrp/Shared
-mkdir darkrpwiki/Functions/Player/Server
-mkdir darkrpwiki/Functions/Player/Client
-mkdir darkrpwiki/Functions/Player/Shared
-mkdir darkrpwiki/Functions/Entity/Server
-mkdir darkrpwiki/Functions/Entity/Client
-mkdir darkrpwiki/Functions/Entity/Shared
-mkdir darkrpwiki/Functions/Vector/Server
-mkdir darkrpwiki/Functions/Vector/Client
-mkdir darkrpwiki/Functions/Vector/Shared
-mkdir darkrpwiki/Hooks/Server
-mkdir darkrpwiki/Hooks/Client
-mkdir darkrpwiki/Hooks/Shared
+mkdir -p darkrpwiki
+mkdir -p darkrpwiki/Functions
+mkdir -p darkrpwiki/Functions/DarkRP/Server
+mkdir -p darkrpwiki/Functions/DarkRP/Client
+mkdir -p darkrpwiki/Functions/DarkRP/Shared
+mkdir -p darkrpwiki/Functions/Player/Server
+mkdir -p darkrpwiki/Functions/Player/Client
+mkdir -p darkrpwiki/Functions/Player/Shared
+mkdir -p darkrpwiki/Functions/Entity/Server
+mkdir -p darkrpwiki/Functions/Entity/Client
+mkdir -p darkrpwiki/Functions/Entity/Shared
+mkdir -p darkrpwiki/Functions/Vector/Server
+mkdir -p darkrpwiki/Functions/Vector/Client
+mkdir -p darkrpwiki/Functions/Vector/Shared
+mkdir -p darkrpwiki/Hooks/Server
+mkdir -p darkrpwiki/Hooks/Client
+mkdir -p darkrpwiki/Hooks/Shared
 ```
 - Start a listen server in GMod (must be a listen server)
 - enter `darkrp_generatewiki` in console
