@@ -1,0 +1,11 @@
+"AddonInfo"
+{
+	"name"				"DarkRP wiki generator"
+	"version"			"1.0"
+	"up_date"			"yesterday"
+	"author_name"			"(FPtje) Falco (A.K.A. Atheos)"
+	"author_email"			"fpeijnenburg@gmail.com"
+	"author_url"			"twitter.com/FPtje"
+	"info"				"Generates wiki pages for DarkRP."
+	"override"			"0"
+}
