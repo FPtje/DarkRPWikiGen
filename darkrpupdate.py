@@ -10,6 +10,7 @@ Parameters:
 """
 import pywikibot
 import os.path
+import os
 
 def upload(site, path):
     for root, _, files in os.walk(path):
@@ -26,6 +27,8 @@ def upload(site, path):
 
             with open(f, 'r') as file:
                 page.text = file.read()
+
+            os.remove(f)
 
             page.save("Wikibot updated DarkRP documentation")
 
