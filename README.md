@@ -3,14 +3,16 @@
 Uses [pywikibot](http://www.mediawiki.org/wiki/Manual:Pywikibot)
 
 # Installation
+Place the darkrpwikiaddon folder in addons
+
 Clone pywikibot into a folder named `pywikibot`.
 ```
 git clone --recursive https://gerrit.wikimedia.org/r/pywikibot/core.git
 ```
 
-- `user-config.py` goes into `pywikibot/`
-- `darkrpupdate.py` goes into `pywikibot/scripts`
-- `darkrp_family.py` goes into `pywikibot/families/darkrp_family.py`
+- `user-config.py` goes into `/` (the root folder of the pywikibot repo)
+- `darkrpupdate.py` goes into `/scripts`
+- `darkrp_family.py` goes into `/pywikibot/families/darkrp_family.py`
 
 # Usage
 > Python 2.7 is recommended because of [this](https://phabricator.wikimedia.org/T90338#1056444)
