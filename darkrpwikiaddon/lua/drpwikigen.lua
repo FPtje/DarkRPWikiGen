@@ -114,6 +114,7 @@ local hookWikiLayout =
 	hook_name	= %s |
 	arguments	= %s |
 	description	= %s |
+	deprecated	= %s |
 	lua_state	= {{%s}} |
 	returns = %s |
 }}
@@ -138,6 +139,7 @@ local function getHookWikiPage(stub)
 		stub.name,
 		getInlineParams(stub.parameters),
 		stub.description,
+		stub.deprecated or "",
 		realmSide[stub.realm],
 		inlineReturns,
 		parameters or "This hook isn't called with any parameters",
@@ -158,6 +160,7 @@ local functionWikiLayout =
 	function_name	= %s%s%s |
 	arguments	= %s |
 	description	= %s |
+	deprecated	= %s |
 	returns 	= %s |
 	library		= {{Type|%s}} |
 	lua_state	= {{%s}} |
@@ -203,6 +206,7 @@ local function getFunctionWikiPage(stub)
 		stub.name,
 		getInlineParams(stub.parameters),
 		stub.description,
+		stub.deprecated or "",
 		inlineReturns,
 		stub.metatable.MetaName,
 		realmSide[stub.realm],
@@ -223,4 +227,3 @@ for k,v in pairs(functions) do
 
 	file.Write(getFileName(v), getFunctionWikiPage(v))
 end
-
