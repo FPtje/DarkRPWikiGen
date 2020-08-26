@@ -14,36 +14,32 @@ git clone --recursive https://gerrit.wikimedia.org/r/pywikibot/core.git
 - `darkrpupdate.py` goes into `/scripts`
 - `darkrp_family.py` goes into `/pywikibot/families/darkrp_family.py`
 
-# Usage
-> Python 2.7 is recommended because of [this](https://phabricator.wikimedia.org/T90338#1056444)
+# Installing dependencies using nix
 
-- You must run the following commands in the `garrysmod/data` folder because all folders created by gmod are lowercase.
 ```bash
-mkdir -p darkrpwiki
-mkdir -p darkrpwiki/Functions
-mkdir -p darkrpwiki/Functions/DarkRP/Server
-mkdir -p darkrpwiki/Functions/DarkRP/Client
-mkdir -p darkrpwiki/Functions/DarkRP/Shared
-mkdir -p darkrpwiki/Functions/Player/Server
-mkdir -p darkrpwiki/Functions/Player/Client
-mkdir -p darkrpwiki/Functions/Player/Shared
-mkdir -p darkrpwiki/Functions/Entity/Server
-mkdir -p darkrpwiki/Functions/Entity/Client
-mkdir -p darkrpwiki/Functions/Entity/Shared
-mkdir -p darkrpwiki/Functions/Vector/Server
-mkdir -p darkrpwiki/Functions/Vector/Client
-mkdir -p darkrpwiki/Functions/Vector/Shared
-mkdir -p darkrpwiki/Hooks/Server
-mkdir -p darkrpwiki/Hooks/Client
-mkdir -p darkrpwiki/Hooks/Shared
+nix-shell -p python3 python3.pkgs.pip
+python -m venv virtualenv
+source virtualenv/bin/activate
+pip install -r requirements.txt
 ```
+
+Activate virtualenv using:
+
+```bash
+source virtualenv/bin/activate
+```
+
+# Usage
+
 - Start a listen server in GMod (must be a listen server)
 - enter `darkrp_generatewiki` in console
 - Enter this command in a terminal (or cmd) in the `pywikibot` folder:
 ```bash
-python2.7 pwb.py darkrpupdate FULL_PATH_OF_DARKRPWIKI_FOLDER
+python pwb.py -putthrottle:0 darkrpupdate FULL_PATH_OF_DARKRPWIKI_FOLDER
 ```
+
+Note: a dry-run can be evaluated using the `-simulate` argument.
 
 Where the `darkrpwiki` folder can be found at `garrysmod/data/darkrpwiki/`
 
-> The bot will prompt you for the bot user password.
+> The bot will prompt you for the bot user password. Note that this is not the bot's user password, but a specifically generated API key.
